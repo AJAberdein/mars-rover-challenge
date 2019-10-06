@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\Transformers\RoverTfms;
 use App\Rover;
+use App\Map;
 
 class RoverTest extends TestCase
 {
@@ -24,6 +25,18 @@ class RoverTest extends TestCase
         $this->assertEquals(1, $rover->x);
         $this->assertEquals(2, $rover->y);
         $this->assertEquals("N", $rover->direction);
+    }
+
+    /**
+     * @test
+     */
+    public function a_mars_rover_can_be_added_to_a_map()
+    {
+    	$map = new Map(5, 5);
+        $rover = new Rover(1, 2, "N");
+        $map->addNewRover($rover);
+
+        $this->assertInstanceOf(MarsRover::class, $map->getRover($rover->id));
     }
 
 }

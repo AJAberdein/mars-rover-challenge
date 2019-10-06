@@ -4,6 +4,7 @@ namespace App;
 
 class Rover
 {
+	public $id;
     public $x;
 	public $y;
 	public $direction;
@@ -11,10 +12,11 @@ class Rover
      /**
      * Instantiate a new Rover instance.
      */
-    public function __construct(int $x, int $y, $direction)
+    public function __construct($id, int $x, int $y, $direction)
     {
     	(! in_array($direction, ["N", "S", "E", "W"])) ? $this->throwDirectionTypingException() : '';
 
+    	$this->id = $id;
     	$this->x = $x;
     	$this->y = $y;
     	$this->direction = $direction;

@@ -19,7 +19,7 @@ class RoverTest extends TestCase
     {
         $input = "1 2 N";
         $location = RoverTfms::location($input);
-        $rover = new Rover($location['x'], $location['y'], $location['direction']);
+        $rover = new Rover('rover_01', $location['x'], $location['y'], $location['direction']);
 
         $this->assertInstanceOf(Rover::class, $rover);
         $this->assertEquals(1, $rover->x);
@@ -33,10 +33,10 @@ class RoverTest extends TestCase
     public function a_mars_rover_can_be_added_to_a_map()
     {
     	$map = new Map(5, 5);
-        $rover = new Rover(1, 2, "N");
-        $map->addNewRover($rover);
+        $rover = new Rover('rover_01', 1, 2, "N");
+        $map->addRover($rover);
 
-        $this->assertInstanceOf(MarsRover::class, $map->getRover($rover->id));
+        $this->assertInstanceOf(Rover::class, $map->getRover($rover->id));
     }
 
 }

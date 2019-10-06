@@ -32,6 +32,26 @@ class MarsRoverAnalysis
 
     }
 
+    public function assessmentToMap($input_data) 
+    {
+
+        if(is_string($input_data)) {
+            $input_data = explode("\n", trim($input_data));
+        }
+    
+        $coords = MapTfms::coords(trim($input_data[0]));
+        $map = new Map($coords['x'], $coords['y']);
+
+        $this->attachInputRoversOntoMap($map, $input_data);
+
+        foreach( $map->getRovers() as $rover) {
+            $rover = $map->moveRover($rover->id, $rover->move_pattern);
+        }
+
+        return $map;
+
+    }
+
     protected function attachInputRoversOntoMap($map, $input_data) {
     	$impl_type = "loc";
     	$rover;

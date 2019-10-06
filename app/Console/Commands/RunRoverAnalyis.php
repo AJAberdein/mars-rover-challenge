@@ -63,9 +63,6 @@ class RunRoverAnalyis extends Command
             }
 
             $impl_type == "loc" ? $impl_type = "mov" : $impl_type = "loc";
-
-            $this->info($input);
-            $this->info(json_encode($assesment_data));
     
             if(strtolower($input) != 'end') {
                 $assesment_data[] = $input;

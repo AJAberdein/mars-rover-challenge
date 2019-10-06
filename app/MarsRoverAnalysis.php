@@ -10,11 +10,13 @@ use App\Transformers\RoverTfms;
 
 class MarsRoverAnalysis
 {
-    public function assess($input) 
+    public function assess($input_data) 
     {
 
-    	$input_data = explode("\n", trim($input));
-
+    	if(is_string($input_data)) {
+			$input_data = explode("\n", trim($input_data));
+    	}
+    
     	$coords = MapTfms::coords(trim($input_data[0]));
         $map = new Map($coords['x'], $coords['y']);
 

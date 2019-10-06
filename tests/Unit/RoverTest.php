@@ -39,4 +39,21 @@ class RoverTest extends TestCase
         $this->assertInstanceOf(Rover::class, $map->getRover($rover->id));
     }
 
+    /**
+     * @test
+     */
+    public function a_mars_rover_can_move_correctly_through_a_map()
+    {
+    	$map = new Map(5, 5);
+        $rover = new Rover("rover_01", 1, 2, "N");
+        $map->addNewRover($rover);
+        $input = "LMLMLMLMM";
+        $move_pattern = RoverTfms::movePattern($input);
+ 		$end_location = $map->moveRover($rover->id, $move_pattern);
+
+        $this->assertEquals(1, $end_location['x']);
+        $this->assertEquals(3, $end_location['y']);
+        $this->assertEquals("N", $end_location['direction']);
+    }
+
 }

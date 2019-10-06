@@ -4,8 +4,8 @@ namespace App\Transformers;
 
 class MapTfms
 {
-    public static function coords(string $input) {
-
+    public static function coords(string $input) 
+    {
     	$input_arr = explode(" ", $input);
     	return [
     			"x" => (int) $input_arr[0],
@@ -13,7 +13,7 @@ class MapTfms
     		];
     }
 
-    
+
     public static function location(string $input) 
     {
     	$input_arr = explode(" ", $input);

@@ -22,7 +22,8 @@ class Rover
     	$this->direction = $direction;
     }
 
-    function throwDirectionTypingException() {
+    function throwDirectionTypingException() 
+    {
 	    throw new Exception("Invalid direction, must be 'N', 'S', 'E' or 'W'");
 	}
 }

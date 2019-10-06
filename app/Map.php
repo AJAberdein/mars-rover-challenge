@@ -21,14 +21,16 @@ class Map
   	/**
      * Add a Rover instance on to the this
      */
-    public function addRover(Rover $rover) {
+    public function addRover(Rover $rover) 
+    {
     	$this->rovers[$rover->id] = $rover;
     }
 
     /**
      * Get a Rover instance from this map's Rovers
      */
-    public function getRover($rover_id) {
+    public function getRover($rover_id) 
+    {
     	return $this->rovers[$rover_id];
     }
 }

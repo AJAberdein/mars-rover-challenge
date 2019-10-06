@@ -1,10 +1,10 @@
 
 
 
-## Mars Rover Challenge
+# Mars Rover Challenge for Platform45
 
 The Mars Rover challenge [outlined by google ]([https://code.google.com/archive/p/marsrovertechchallenge/](https://code.google.com/archive/p/marsrovertechchallenge/)) written in PHP and Laravel using TDD for Platform45.
-This is also hosted on [http://platform45.ajaberdein.com/](http://platform45.ajaberdein.com/) if you want to just jump right into it and check it out right away.
+This is also hosted on [http://platform45.ajaberdein.com](http://platform45.ajaberdein.com) if you want to just jump right into it and check it out right away.
 
 ## Requires:
 

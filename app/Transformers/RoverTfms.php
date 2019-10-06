@@ -14,5 +14,10 @@ class RoverTfms
     			"direction" => $input_arr[2],
     		];
     }	
+
+    public static function movePattern(string $input) 
+    {
+    	return str_split($input);
+    }
     
 }

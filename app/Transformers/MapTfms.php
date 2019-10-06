@@ -22,5 +22,10 @@ class MapTfms
     			"y" => (int) $input_arr[1],
     			"direction" => $input_arr[2],
     		];
-    }	
+    }
+
+    public static function movePattern(string $input) 
+    {
+    	$return explode(" ", $input);
+    }
 }

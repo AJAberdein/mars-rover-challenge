@@ -33,4 +33,31 @@ class Map
     {
     	return $this->rovers[$rover_id];
     }
+
+    /**
+     * Rotate or Move a Rover through the map
+     */
+    public function moveRover($rover_id, $move_pattern) 
+    {
+    	$rover = $this->rovers[$rover_id];
+
+    	foreach($move_pattern as $movement ) {
+    		switch ($movement) {
+			    case "L":
+			        $rover->rotateLeft();
+			        break;
+			    case "R":
+			        $rover->rotateRight();			        
+			        break;
+			    case "M":
+			        $rover->move();		
+			        break;
+		    	default:
+        			throw new \Exception("Invalid move! Must be 'L', 'R' or 'M'");
+        	}
+    	}
+
+    	return $rover;
+  
+    }
 }

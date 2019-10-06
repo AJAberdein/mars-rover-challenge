@@ -46,14 +46,14 @@ class RoverTest extends TestCase
     {
     	$map = new Map(5, 5);
         $rover = new Rover("rover_01", 1, 2, "N");
-        $map->addNewRover($rover);
+        $map->addRover($rover);
         $input = "LMLMLMLMM";
         $move_pattern = RoverTfms::movePattern($input);
- 		$end_location = $map->moveRover($rover->id, $move_pattern);
+ 		$rover = $map->moveRover($rover->id, $move_pattern);
 
-        $this->assertEquals(1, $end_location['x']);
-        $this->assertEquals(3, $end_location['y']);
-        $this->assertEquals("N", $end_location['direction']);
+        $this->assertEquals(1, $rover->x);
+        $this->assertEquals(3, $rover->y);
+        $this->assertEquals("N", $rover->direction);
     }
 
 }

@@ -7,6 +7,7 @@ class Map
 
 	public $x;
 	public $y;
+	
      /**
      * Instantiate a new Map instance.
      */

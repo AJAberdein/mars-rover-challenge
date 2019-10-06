@@ -34,6 +34,14 @@ class Map
     	return $this->rovers[$rover_id];
     }
 
+      /**
+     * Get an array of this map's Rovers
+     */
+    public function getRovers() 
+    {
+    	return $this->rovers;
+    }
+
     /**
      * Rotate or Move a Rover through the map
      */

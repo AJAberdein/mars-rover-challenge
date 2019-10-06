@@ -8,6 +8,7 @@ class Rover
     public $x;
 	public $y;
 	public $direction;
+	public $move_pattern;
 	
      /**
      * Instantiate a new Rover instance.

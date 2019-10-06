@@ -25,7 +25,9 @@ class MarsRoverAnalysisTest extends TestCase
         $rover_analyser = new MarsRoverAnalysis();
         $result = $rover_analyser->assess($input);
 
-        $this->assertEquals("1 3 N", $result);
+
+        // dd($result);
+        $this->assertEquals("1 3 N\n", $result);
     }
 
     /**
@@ -44,7 +46,7 @@ class MarsRoverAnalysisTest extends TestCase
         $rover_analyser = new MarsRoverAnalysis();
         $result = $rover_analyser->assess($input);
 
-        $this->assertEquals("1 3 N\n5 1 E", $result);
+        $this->assertEquals("1 3 N\n5 1 E\n", $result);
 
     }
 }
